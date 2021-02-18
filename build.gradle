@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+    id 'maven'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group 'com.fujimotoakira'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "GitHubPackages"
+        url = uri("https://maven.pkg.github.com/gumtreediff/gumtree")
+        credentials {
+            username = project.hasProperty("GITHUB_USER") ? GITHUB_USER : ''
+            password = project.hasProperty("GITHUB_TOKEN") ? GITHUB_TOKEN : ''
+        }
+    }
+}
+
+dependencies {
+    annotationProcessor 'org.atteo.classindex:classindex:3.10'
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:3.23.0'
+    implementation 'com.github.gumtreediff:core:3.0.0-beta1'
+    implementation 'org.atteo.classindex:classindex:3.10'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+}
