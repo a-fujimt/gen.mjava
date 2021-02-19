@@ -16,6 +16,9 @@
  *
  * Copyright 2011-2015 Jean-Rémy Falleri <jr.falleri@gmail.com>
  * Copyright 2011-2015 Floréal Morandat <florealm@gmail.com>
+ *
+ * This software is modified on Feb. 2021.
+ * Copyright 2021 Akira Fujimoto <a-fujimt@ist.osaka-u.ac.jp>
  */
 
 package com.fujimotoakira.gen.mjava.cd;
