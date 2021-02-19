@@ -15,7 +15,6 @@ build.gradle
 ```groovy
 repositories {
     ....
-    mavenLocal()
     maven {
         name = "GitHubPackages"
         url = uri("https://maven.pkg.github.com/a-fujimt/gen.mjava")
@@ -27,7 +26,7 @@ repositories {
 }
 
 dependencies {
-	implementation 'com.fujimotoakira:gen.mjava:1.0-SNAPSHOT'
+  implementation 'com.fujimotoakira:gen.mjava:1.0-SNAPSHOT'
   implementation 'com.github.gumtreediff:core:version' // GumTree
   implementation 'com.github.gumtreediff:client:version' // GumTree
   ....
@@ -40,7 +39,7 @@ GITHUB_USER = XXXXXX
 GUTHUB_TOKEN = YYYYYY
  ```
 
-このプロジェクトはGitHub Packageで公開されているライブラリを使用しているため`gradle.properties`にGitHubのアクセストークンを記載します．アクセストークンについての詳しい情報は[こちら](https://docs.github.com/ja/packages/learn-github-packages/about-github-packages#managing-packages)をご覧ください．
+このプロジェクトはGitHub Packageで公開されているため`gradle.properties`にGitHubのアクセストークンを記載します．アクセストークンについての詳しい情報は[こちら](https://docs.github.com/ja/packages/learn-github-packages/about-github-packages#managing-packages)をご覧ください．
 
 ### ASTの生成
 

@@ -15,7 +15,6 @@ build.gradle
 ```groovy
 repositories {
     ....
-    mavenLocal()
     maven {
         name = "GitHubPackages"
         url = uri("https://maven.pkg.github.com/a-fujimt/gen.mjava")
@@ -27,7 +26,7 @@ repositories {
 }
 
 dependencies {
-	implementation 'com.fujimotoakira:gen.mjava:1.0-SNAPSHOT'
+  implementation 'com.fujimotoakira:gen.mjava:1.0-SNAPSHOT'
   implementation 'com.github.gumtreediff:core:version' // GumTree
   implementation 'com.github.gumtreediff:client:version' // GumTree
   ....
@@ -40,7 +39,7 @@ GITHUB_USER = XXXXXX
 GUTHUB_TOKEN = YYYYYY
  ```
 
-Add GitHub authentication in `gradle.properties`. This project use some libliers in Github Package. If you want to know detail about GitHub authentication, see [this page](https://docs.github.com/en/packages/learn-github-packages/about-github-packages#about-scopes-and-permissions-for-package-registries).
+Add GitHub authentication in `gradle.properties` because this project is published in Github Package. If you want to know detail about GitHub authentication, see [this page](https://docs.github.com/en/packages/learn-github-packages/about-github-packages#about-scopes-and-permissions-for-package-registries).
 
 ### Parsing a file
 
