@@ -7,30 +7,9 @@ EN [JP](./README_JP.md)
 This is a AST Generator of [GumTree](https://github.com/GumTreeDiff/gumtree) for `.mjava` file.
  `.mjava` is extracted method as a single file.
 
-## Installation
-
-1. Clone this project
-``` sh
-$ git clone https://github.com/a-fujimt/gen.mjava.git
-```
-
-2. Add GitHub authentication in `gradle.properties`. This project use some libliers in Github Package. If you want to know detail about GitHub authentication, see [this page](https://docs.github.com/en/packages/learn-github-packages/about-github-packages#about-scopes-and-permissions-for-package-registries).
-```sh
-$ cd gen.mjava
-$ echo GITHUB_USER = XXXXXX >> gradle.properties
-$ echo GITHUB_TOKEN = YYYYYY >> gradle.properties
-```
-
-3. Build
-```shell
-$ gradle shadowJar  # if use jar
-or
-$ gradle install  # if use from maven local repository
-```
-
 ## Usage in your project
 
-### Gradle (with Maven Local Repository)
+### Gradle (with GitHub Packages)
 
 build.gradle
 ```groovy
@@ -39,7 +18,7 @@ repositories {
     mavenLocal()
     maven {
         name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/gumtreediff/gumtree")
+        url = uri("https://maven.pkg.github.com/a-fujimt/gen.mjava")
         credentials {
             username = project.hasProperty("GITHUB_USER") ? GITHUB_USER : ''
             password = project.hasProperty("GITHUB_TOKEN") ? GITHUB_TOKEN : ''
@@ -60,6 +39,8 @@ gradle.properties
 GITHUB_USER = XXXXXX
 GUTHUB_TOKEN = YYYYYY
  ```
+
+Add GitHub authentication in `gradle.properties`. This project use some libliers in Github Package. If you want to know detail about GitHub authentication, see [this page](https://docs.github.com/en/packages/learn-github-packages/about-github-packages#about-scopes-and-permissions-for-package-registries).
 
 ### Parsing a file
 

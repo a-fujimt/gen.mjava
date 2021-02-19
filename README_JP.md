@@ -7,30 +7,9 @@
 [GumTree](https://github.com/GumTreeDiff/gumtree)の `.mjava` 用のASTを生成します．
  `.mjava`ファイルはJavaプログラムから一つのメソッドのみを抽出したファイルです．
 
-## 導入方法
-
-1. このプロジェクトをクローン
-``` sh
-$ git clone https://github.com/a-fujimt/gen.mjava.git
-```
-
-2. このプロジェクトはGitHub Packageで公開されているライブラリを使用しているため`gradle.properties`にGitHubのアクセストークンを記載します．アクセストークンについての詳しい情報は[こちら](https://docs.github.com/ja/packages/learn-github-packages/about-github-packages#managing-packages)をご覧ください．
-```sh
-$ cd gen.mjava
-$ echo GITHUB_USER = XXXXXX >> gradle.properties
-$ echo GITHUB_TOKEN = YYYYYY >> gradle.properties
-```
-
-3. ライブラリとしてjarを使用する場合は上を，Mavenのローカルリポジトリから使用する場合は下を実行してください．
-```shell
-$ gradle shadowJar  # if use jar
-or
-$ gradle install  # if use from maven local repository
-```
-
 ## 使用方法
 
-### Gradle (Mavenローカルリポジトリを使用)
+### Gradle (GitHub Packagesを使用)
 
 build.gradle
 ```groovy
@@ -39,7 +18,7 @@ repositories {
     mavenLocal()
     maven {
         name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/gumtreediff/gumtree")
+        url = uri("https://maven.pkg.github.com/a-fujimt/gen.mjava")
         credentials {
             username = project.hasProperty("GITHUB_USER") ? GITHUB_USER : ''
             password = project.hasProperty("GITHUB_TOKEN") ? GITHUB_TOKEN : ''
@@ -60,6 +39,8 @@ gradle.properties
 GITHUB_USER = XXXXXX
 GUTHUB_TOKEN = YYYYYY
  ```
+
+このプロジェクトはGitHub Packageで公開されているライブラリを使用しているため`gradle.properties`にGitHubのアクセストークンを記載します．アクセストークンについての詳しい情報は[こちら](https://docs.github.com/ja/packages/learn-github-packages/about-github-packages#managing-packages)をご覧ください．
 
 ### ASTの生成
 
